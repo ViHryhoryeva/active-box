@@ -4,9 +4,26 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+input, textarea {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
 body {
-  font-family: Raleway, sans-serif;
+  font-family: Raleway;
   font-size: 18px;
+  font-weight: 400;
   line-height: 21px;
 }
 
@@ -18,6 +35,12 @@ body {
   margin-bottom: 116px;
   padding: 36px 0 120px;
   position: relative;
+}
+
+.banner__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .banner:before {
@@ -38,27 +61,69 @@ body {
   text-transform: uppercase;
   z-index: 1;
   margin-bottom: 31px;
+  font-family: Raleway;
   font-size: 64px;
   font-weight: 900;
   line-height: 75px;
   position: relative;
 }
 
-.banner .banner__text {
+.banner__text {
   color: #fff;
   text-align: center;
   z-index: 1;
   margin-bottom: 80px;
+  font-family: Raleway;
   font-size: 24px;
   font-weight: 400;
   line-height: 28px;
   position: relative;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+@media only screen and (width <= 1024px) {
+  .banner {
+    margin-bottom: 78px;
+    padding-bottom: 126px;
+  }
+
+  .banner__title {
+    margin-bottom: 62px;
+    font-family: Raleway;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 56px;
+  }
+
+  .banner__text {
+    margin-bottom: 89px;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .banner {
+    margin-bottom: 40px;
+    padding: 0 0 52px;
+  }
+
+  .banner__title {
+    margin-bottom: 33px;
+    font-family: Raleway;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 42px;
+  }
+
+  .banner__text {
+    margin-bottom: 50px;
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
 }
 
 .header {
@@ -70,10 +135,33 @@ body {
   position: relative;
 }
 
+.header__burger {
+  display: none;
+}
+
+@media only screen and (width <= 1024px) {
+  .header {
+    margin-bottom: 157px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .header {
+    border-bottom: none;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 0;
+  }
+
+  .header__burger {
+    padding: 19px 15px;
+    display: block;
+  }
+}
+
 .nav__list {
   cursor: pointer;
   align-items: center;
-  list-style-type: none;
   display: flex;
 }
 
@@ -86,10 +174,10 @@ body {
   text-align: center;
   text-transform: uppercase;
   padding: 7px 35px;
+  font-family: Raleway;
   font-size: 13px;
   font-weight: 700;
   line-height: 15px;
-  text-decoration: none;
   display: inline-block;
 }
 
@@ -106,6 +194,23 @@ body {
   color: #e71414;
 }
 
+@media only screen and (width <= 1024px) {
+  .nav__link {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .nav {
+    display: none;
+  }
+}
+
 .btn {
   color: #fff;
   text-align: center;
@@ -115,6 +220,7 @@ body {
   border: none;
   margin: 0 auto;
   padding: 26px 70px;
+  font-family: Raleway;
   font-size: 24px;
   font-weight: 900;
   line-height: 28px;
@@ -131,85 +237,20 @@ body {
   box-shadow: 4px 4px 30px #ff4343;
 }
 
-.header__burger {
-  display: none;
-}
-
 @media only screen and (width <= 1024px) {
-  .banner {
-    margin-bottom: 78px;
-    padding-bottom: 126px;
-  }
-
-  .nav__link {
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 12px;
-    line-height: 14px;
-  }
-
-  .header {
-    margin-bottom: 157px;
-  }
-
-  .banner__title {
-    margin-bottom: 62px;
-    font-size: 48px;
-    line-height: 56px;
-  }
-
-  .banner__text {
-    margin-bottom: 89px;
-    font-size: 18px;
-    line-height: 21px;
-  }
-
   .btn {
     padding: 26px 55px;
   }
 }
 
 @media only screen and (width <= 767px) {
-  .banner {
-    margin-bottom: 40px;
-    padding: 0 0 52px;
-  }
-
-  .header {
-    border-bottom: none;
-    align-items: center;
-    margin-bottom: 50px;
-    padding-bottom: 0;
+  .btn {
+    padding: 16px 38px;
   }
 
   .link__logo svg {
     width: 103px;
     height: 14px;
-  }
-
-  .banner__title {
-    margin-bottom: 33px;
-    font-size: 36px;
-    line-height: 42px;
-  }
-
-  .banner__text {
-    margin-bottom: 50px;
-    font-size: 14px;
-    line-height: 16px;
-  }
-
-  .btn {
-    padding: 16px 38px;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .header__burger {
-    padding: 19px 15px;
-    display: block;
   }
 }
 

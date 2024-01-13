@@ -1,6 +1,12 @@
 @import 'reset';
 @import 'mixins';
 
+//переменные
+$color: #FFF;
+$color_border: #BABBC5;
+$background_btn: #FF4343;
+$color_nav: #E71414;
+
 body {
     @include font(18px, 21px, 'Raleway', 400);
 }
@@ -28,7 +34,7 @@ body {
         top: 0;
     }
     &__title {
-        color: #FFF;
+        color: $color;
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 31px;
@@ -37,7 +43,7 @@ body {
         @include font(64px, 75px,'Raleway', 900);
     }
     &__text {
-        color: #FFF;
+        color: $color;
         text-align: center;
         @include font(24px, 28px,'Raleway', 400);
         margin-bottom: 80px;
@@ -77,7 +83,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #BABBC5;
+    border-bottom: 1px solid $color_border;
     position: relative;
     z-index: 1;
     margin-bottom: 130px;
@@ -114,7 +120,7 @@ body {
         padding-bottom: 36px;
     }
     &__link {
-        color: #FFF;
+        color: $color;
         text-align: center;
         @include font(13px, 15px,'Raleway', 700);
         text-transform: uppercase;
@@ -122,14 +128,14 @@ body {
         display: inline-block;
     }
     &__item:hover {
-        border-bottom: 3px solid #BABBC5;
+        border-bottom: 3px solid $color_border;
     }
     &__item:active {
-        border-bottom: 3px solid #E71414;
-        color: #E71414;
+        border-bottom: 3px solid $color_nav;
+        color: $color_nav;
     }
     &__item:active &__link {
-        color: #E71414;
+        color: $color_nav;
     }
     @media only screen and (max-width: 1024px) {
         &__link {
@@ -146,12 +152,12 @@ body {
 }
 
 .btn {
-    color: #FFF;
+    color: $color;
     text-align: center;
     @include font(24px, 28px,'Raleway', 900);
     text-transform: uppercase;
     padding: 26px 70px;
-    background-color: #FF4343;
+    background-color: $background_btn;
     border: none;
     position: relative;
     z-index: 1;
@@ -159,11 +165,11 @@ body {
     margin: 0 auto;
 
     &:hover {
-        background-color: #E71414;
+        background-color: $color_nav;
     }
     &:active {
-        background: #FF4343;
-        box-shadow: 4px 4px 30px 0px #FF4343;
+        background: $background_btn;
+        box-shadow: 4px 4px 30px 0px $background_btn;
     }
 
     @media only screen and (max-width: 1024px) {
@@ -179,8 +185,10 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-    .link__logo svg {
-        width: 103px;
-        height: 14px;
-    }  
+    .link__logo {
+        & svg {
+            width: 103px;
+            height: 14px;
+            }  
+    } 
 }
