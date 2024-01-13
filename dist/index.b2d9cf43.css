@@ -33,7 +33,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 116px;
-  padding: 36px 0 120px;
+  padding: 230px 0 120px;
   position: relative;
 }
 
@@ -130,9 +130,12 @@ body {
   z-index: 1;
   border-bottom: 1px solid #babbc5;
   justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
   margin-bottom: 130px;
   display: flex;
-  position: relative;
+  position: fixed;
+  top: 38px;
 }
 
 .header__burger {
