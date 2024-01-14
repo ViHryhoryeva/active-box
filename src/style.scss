@@ -67,7 +67,7 @@ body {
     }
     @media only screen and (max-width: 767px) {
         & {
-            padding: 0 0 52px;
+            padding: 106px 0 52px;
             margin-bottom: 40px;
         }
         &__title {
@@ -81,18 +81,23 @@ body {
     }
 }
 .header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid $color_border;
     position: fixed;
-    width: 100%;
-    max-width: 1200px;
-    top: 38px;
+    top: 0;
+    left: 0;
     z-index: 1;
-    margin-bottom: 130px;
+    width: 100%;
 
+    &__container {
+        @include container();
+        border-bottom: 1px solid $color_border;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     &__burger {
-        display: none;
+        & svg {
+            display: none;
+        }
     }
 
     @media only screen and (max-width: 1024px) {
@@ -102,14 +107,18 @@ body {
     }
     @media only screen and (max-width: 767px) {
         & {
-            margin-bottom: 50px;
+            padding: 22px 0;
             align-items: center;
             border-bottom: none;
-            padding-bottom: 0;
+            margin-bottom: 0;
         }
         &__burger {
-            display: block;
-            padding: 19px 15px;
+           & svg {
+            display: flex;
+            } 
+        }
+        &__container {
+            border-bottom: none;
         }
     }
 }
@@ -117,27 +126,23 @@ body {
     &__list {
         display: flex;
         align-items: center;
-        cursor: pointer;
     }
-    &__item {
-        padding-bottom: 36px;
+    &__link:hover {
+        border-bottom: 3px solid $color_border;
     }
     &__link {
         color: $color;
         text-align: center;
         @include font(13px, 15px,'Raleway', 700);
         text-transform: uppercase;
-        padding: 7px 35px;
+        padding: 35px 5px;
         display: inline-block;
+        min-width: 134px;
+        padding-bottom: 36px;
+        border-bottom: 3px solid transparent;
     }
-    &__item:hover {
-        border-bottom: 3px solid $color_border;
-    }
-    &__item:active {
+    &__link:active {
         border-bottom: 3px solid $color_nav;
-        color: $color_nav;
-    }
-    &__item:active &__link {
         color: $color_nav;
     }
     @media only screen and (max-width: 1024px) {
@@ -166,6 +171,7 @@ body {
     z-index: 1;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
 
     &:hover {
         background-color: $color_nav;
@@ -183,15 +189,29 @@ body {
     @media only screen and (max-width: 767px) {
         & {
             padding: 16px 38px;
+            width: 100%;
         }
     }
 }
 
-@media only screen and (max-width: 767px) {
-    .link__logo {
-        & svg {
-            width: 103px;
-            height: 14px;
-            }  
-    } 
+.link__logo {
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 1024px) {
+        & {
+            svg {
+                width: 112px;
+                height: 28px;
+            }
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        &  {
+            svg {
+                width: 103px;
+                height: 14px;
+            }
+        }  
+    }
 }

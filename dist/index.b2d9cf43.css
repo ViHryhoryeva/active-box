@@ -106,7 +106,7 @@ body {
 @media only screen and (width <= 767px) {
   .banner {
     margin-bottom: 40px;
-    padding: 0 0 52px;
+    padding: 106px 0 52px;
   }
 
   .banner__title {
@@ -128,17 +128,23 @@ body {
 
 .header {
   z-index: 1;
-  border-bottom: 1px solid #babbc5;
-  justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
-  margin-bottom: 130px;
-  display: flex;
   position: fixed;
-  top: 38px;
+  top: 0;
+  left: 0;
 }
 
-.header__burger {
+.header__container {
+  border-bottom: 1px solid #babbc5;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+}
+
+.header__burger svg {
   display: none;
 }
 
@@ -152,31 +158,35 @@ body {
   .header {
     border-bottom: none;
     align-items: center;
-    margin-bottom: 50px;
-    padding-bottom: 0;
+    margin-bottom: 0;
+    padding: 22px 0;
   }
 
-  .header__burger {
-    padding: 19px 15px;
-    display: block;
+  .header__burger svg {
+    display: flex;
+  }
+
+  .header__container {
+    border-bottom: none;
   }
 }
 
 .nav__list {
-  cursor: pointer;
   align-items: center;
   display: flex;
 }
 
-.nav__item {
-  padding-bottom: 36px;
+.nav__link:hover {
+  border-bottom: 3px solid #babbc5;
 }
 
 .nav__link {
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  padding: 7px 35px;
+  border-bottom: 3px solid #0000;
+  min-width: 134px;
+  padding: 35px 5px 36px;
   font-family: Raleway;
   font-size: 13px;
   font-weight: 700;
@@ -184,17 +194,9 @@ body {
   display: inline-block;
 }
 
-.nav__item:hover {
-  border-bottom: 3px solid #babbc5;
-}
-
-.nav__item:active {
+.nav__link:active {
   color: #e71414;
   border-bottom: 3px solid #e71414;
-}
-
-.nav__item:active .nav__link {
-  color: #e71414;
 }
 
 @media only screen and (width <= 1024px) {
@@ -219,6 +221,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   z-index: 1;
+  cursor: pointer;
   background-color: #ff4343;
   border: none;
   margin: 0 auto;
@@ -248,9 +251,24 @@ body {
 
 @media only screen and (width <= 767px) {
   .btn {
+    width: 100%;
     padding: 16px 38px;
   }
+}
 
+.link__logo {
+  align-items: center;
+  display: flex;
+}
+
+@media only screen and (width <= 1024px) {
+  .link__logo svg {
+    width: 112px;
+    height: 28px;
+  }
+}
+
+@media only screen and (width <= 767px) {
   .link__logo svg {
     width: 103px;
     height: 14px;
