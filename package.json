@@ -1,0 +1,27 @@
+{
+  "name": "active-box",
+  "version": "1.0.0",
+  "description": "active-box project",
+  "scripts": {
+    "start": "npx parcel src/index.html",
+    "build": "npx parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ViHryhoryeva/active-box"
+  },
+  "keywords": [
+    "scss",
+    "html",
+    "parcel"
+  ],
+  "author": "Viktoria Hryhoryeva",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
+    "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "parsel": "^0.3.0"
+  }
+}
