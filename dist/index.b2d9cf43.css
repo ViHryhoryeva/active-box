@@ -57,6 +57,12 @@ body {
   padding: 0 15px;
 }
 
+@media only screen and (width <= 767px) {
+  .banner__container.hide {
+    opacity: 0;
+  }
+}
+
 .banner:before {
   content: "";
   opacity: .8;
@@ -174,22 +180,24 @@ body {
 }
 
 .header__burger svg {
+  z-index: 1;
   display: none;
+  position: relative;
 }
 
 @media only screen and (width <= 767px) {
   .header__burger svg {
-    display: flex;
+    display: block;
   }
+}
+
+.header.scrolled {
+  background-color: #2f3047;
 }
 
 .nav__list {
   align-items: center;
   display: flex;
-}
-
-.nav__link:hover {
-  border-bottom: 3px solid #babbc5;
 }
 
 .nav__link {
@@ -203,6 +211,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   line-height: 15px;
+  transition: all .3s linear;
   display: inline-block;
 }
 
@@ -225,6 +234,10 @@ body {
   }
 }
 
+.nav__link:hover {
+  border-bottom: 3px solid #babbc5;
+}
+
 .nav__link:active {
   color: #e71414;
   border-bottom: 3px solid #e71414;
@@ -233,6 +246,26 @@ body {
 @media only screen and (width <= 767px) {
   .nav {
     display: none;
+  }
+
+  .nav.open {
+    width: 100%;
+    height: 100vh;
+    padding: 84px 20px 20px;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .nav.open .nav__list {
+    display: block;
+  }
+
+  .nav.open .nav__list .nav__link {
+    text-align: left;
+    padding: 24px 0;
+    display: block;
   }
 }
 
@@ -250,6 +283,7 @@ body {
   font-size: 24px;
   font-weight: 900;
   line-height: 28px;
+  transition: all .3s linear;
   display: block;
   position: relative;
 }
@@ -277,6 +311,7 @@ body {
 }
 
 .link__logo {
+  z-index: 1;
   align-items: center;
   display: flex;
 }
@@ -425,6 +460,7 @@ body {
 
 .works__container {
   grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
   display: grid;
 }
 
@@ -452,13 +488,13 @@ body {
 .works__wrapper-content {
   opacity: 0;
   background-color: #ff4343cc;
-  border: 2px solid #fff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 21px;
   width: 100%;
   height: 100%;
+  transition: all .3s linear;
   display: flex;
   position: absolute;
   top: 0;
@@ -664,8 +700,24 @@ body {
   }
 }
 
-.facebook:hover path, .twitter:hover path, .linkedin:hover path {
+.facebook, .linkedin, .twitter {
+  transition: fill .3s linear;
+}
+
+.facebook:hover, .linkedin:hover, .twitter:hover {
+  border: 1px solid #e71414;
+}
+
+.facebook:active, .linkedin:active, .twitter:active {
+  border: 1px solid #b90c0ccc;
+}
+
+.facebook:hover path, .linkedin:hover path, .twitter:hover path {
   fill: #e71414;
+}
+
+.facebook:active path, .linkedin:active path, .twitter:active path {
+  fill: #b90c0ccc;
 }
 
 /*# sourceMappingURL=index.b2d9cf43.css.map */

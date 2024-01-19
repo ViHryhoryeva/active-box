@@ -1,0 +1,2 @@
+let e=document.querySelector(".header");window.addEventListener("scroll",function(){window.scrollY>0?e.classList.add("scrolled"):e.classList.remove("scrolled")});let t=document.querySelector(".header__burger"),c=document.querySelector(".nav"),n=document.querySelector(".banner__container");function o(){c.classList.remove("open")}t.addEventListener("click",function(){c.classList.toggle("open"),n.classList.toggle("hide")}),document.querySelectorAll(".nav li").forEach(function(e){e.addEventListener("click",o)});
+//# sourceMappingURL=index.4d8e9341.js.map
