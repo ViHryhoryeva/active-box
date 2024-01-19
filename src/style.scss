@@ -75,6 +75,8 @@ body {
         margin-bottom: 80px;
         position: relative;
         z-index: 1;
+        max-width: 1000px;
+        
         @include font(24px, 28px,'Raleway', 400);
 
         @media only screen and (max-width: 1024px) {
@@ -270,26 +272,20 @@ body {
 }
 // features
 .features {
-    margin-bottom: 133px;
-    @media only screen and (max-width: 1024px) {
-        margin-bottom: 80px;
-    }
-    @media only screen and (max-width: 767px) {
-        margin-bottom: 35px;
-    }
     &__container {
         @include container();
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 30px;
         row-gap: 88px;
+        margin-bottom: 133px;
         @media only screen and (max-width: 1024px) {
             column-gap: 20px;
             row-gap: 50px;
+            margin-bottom: 80px;
         }
         @media only screen and (max-width: 767px) {
-            display: flex;
-            flex-direction: column;
+            grid-template-columns: 1fr;
             row-gap: 42px;
         }
     }
@@ -297,7 +293,17 @@ body {
         text-align: center;  
     }
     &__wrapper-svg {
-        margin-bottom: 29px;
+        display: flex;
+        width: 85px;
+        height: 85px;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 29px;
+
+        & svg {
+            width: 100%;
+            height: 100%;
+        }
         @media only screen and (max-width: 1024px) {
             margin-bottom: 25px;
             svg {
@@ -312,18 +318,19 @@ body {
                 height: 75px;
             }
         }
+        
     }
     &__title {
         color: $color_title;
         @include font(24px, 28px,'Raleway', 900);
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-bottom: 42px;
         @media only screen and (max-width: 1024px) {
-            margin-bottom: 4px;
+            margin-bottom: 23px;
             @include font(18px, 21px,'Raleway', 900);
         }
         @media only screen and (max-width: 767px) {
-            margin-bottom: 2px;
+            margin-bottom: 15px;
         }
     }
     &__text {
@@ -373,11 +380,11 @@ body {
         background-color: $background_img_hover;
         display: flex;
         flex-direction: column;
-        row-gap: 21px;
         justify-content: center;
         align-items: center;
         opacity: 0;
         transition: all .3s linear;
+        cursor: pointer;
         &:hover {
             opacity: 1;
         }
@@ -416,24 +423,26 @@ body {
     }
     &__container {
         @include container();
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         column-gap: 30px;
         @media only screen and (max-width: 767px) {
-            flex-direction: column;
+            grid-template-columns: 1fr;
             row-gap: 50px;
         }
     }
-    &__info {
-        display: flex;
-        flex-direction: column;
-    }
     &__wrapper-image {
         margin-bottom: 30px;
+        position: relative;
+        padding-top: 100%;
         @media only screen and (max-width: 1024px) {
             margin-bottom: 25px;
         }
     }
     &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -477,12 +486,23 @@ body {
 .wrapper__social-media {
     display: flex;
     column-gap: 6px;
-    &__facebook, 
-    &__twitter,
-    &__linkedin {
+}
+    .facebook__link, 
+    .twitter__link,
+    .linkedin__link {
         border: 1px solid $color_border-icon;
         width: 39px;
         height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: fill .3s linear;
+        &:hover {
+            border: 1px solid $color_nav;
+        }
+        &:active {
+            border: 1px solid $background_img_active;
+        }
         @media only screen and (max-width: 1024px) {
             width: 32px;
             height: 32px;
@@ -493,17 +513,11 @@ body {
         }
 
     }
-}
+
 .facebook,
 .linkedin,
 .twitter {
-    transition: fill .3s linear;
-    &:hover {
-        border: 1px solid $color_nav;
-    }
-    &:active {
-        border: 1px solid $background_img_active;
-    }
+    transition: fill .3s linear; 
     &:hover path {
         fill: $color_nav;
     }
