@@ -72,10 +72,11 @@ body {
     &__text {
         color: $color;
         text-align: center;
-        margin-bottom: 80px;
         position: relative;
         z-index: 1;
         max-width: 1000px;
+        margin: 0 auto;
+        margin-bottom: 80px;
         
         @include font(24px, 28px,'Raleway', 400);
 
@@ -129,20 +130,70 @@ body {
         }
     }
     &__burger {
-        & svg {
-            display: none;
-            position: relative;
-            z-index: 1;
-            @media only screen and (max-width: 767px) {
-                & {
-                    display: block;
+        // & svg {
+        //     display: none;
+        //     position: relative;
+        //     z-index: 1;
+        //     @media only screen and (max-width: 767px) {
+        //         & {
+        //             display: block;
                     
-                } 
+        //         } 
+        //     }
+        // }
+        display: none;
+        z-index: 2;
+        width: 24px;
+        height: 18px;
+        position: relative;
+        @media only screen and (max-width: 767px) {
+            & {
+                display: block;
+        }
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-bottom: 3px solid $color;
+            transition: all .3s linear;
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-bottom: 3px solid $color;
+            transition: all .3s linear;
+        }
+    }
+        &.open {
+            .header__burger-item {
+                opacity: 0;
+                transition: all .3s linear;
+            }
+            &::after {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            &::before {
+                transform: rotate(45deg) translate(5.7px, 5.7px);
             }
         }
     }
     &.scrolled {
         background-color: #2f3047;
+    }
+    &__burger-item {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-bottom: 3px solid $color;
+        width: 100%;
     }
 }
 .nav {

@@ -28,6 +28,7 @@ menuButton.addEventListener('click', toggleMenu);
 // Функция для открытия/закрытия меню
 function toggleMenu() {
     menu.classList.toggle('open');
+    menuButton.classList.toggle('open');
     bannerContainer.classList.toggle('hide');
 }
 
