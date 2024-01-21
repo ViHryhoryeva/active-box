@@ -766,4 +766,357 @@ body {
   fill: #b90c0ccc;
 }
 
+.testimonials {
+  margin-bottom: 114px;
+}
+
+@media only screen and (width <= 1024px) {
+  .testimonials {
+    margin-bottom: 77px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .testimonials {
+    margin-bottom: 45px;
+  }
+}
+
+.testimonials__container {
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 31px;
+  display: grid;
+}
+
+@media only screen and (width <= 767px) {
+  .testimonials__container {
+    grid-template-columns: 1fr;
+    margin-bottom: 24px;
+  }
+}
+
+.testimonials__image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.testimonials__info {
+  background-color: #5c3249;
+  padding: 133px 15px 116px;
+}
+
+@media only screen and (width <= 1024px) {
+  .testimonials__info {
+    padding: 61px 15px 110px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .testimonials__info {
+    padding: 17px 20px 95px;
+  }
+}
+
+.testimonials__comment {
+  color: #fff;
+  text-transform: capitalize;
+  max-width: 471px;
+  margin: 0 auto 17px;
+  font-family: Cardo;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 49px;
+}
+
+@media only screen and (width <= 1024px) {
+  .testimonials__comment {
+    margin-bottom: 14px;
+    font-family: Cardo;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .testimonials__comment {
+    margin-bottom: 23px;
+  }
+}
+
+.testimonials__autor {
+  color: #fff;
+  text-transform: uppercase;
+  max-width: 471px;
+  margin: 0 auto;
+  font-family: Raleway;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+@media only screen and (width <= 1024px) {
+  .testimonials__autor {
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+  }
+}
+
+.testimonials__wrapper-svg {
+  text-align: center;
+}
+
+.download {
+  margin-bottom: 114px;
+}
+
+@media only screen and (width <= 1024px) {
+  .download {
+    margin-bottom: 78px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .download {
+    margin-bottom: 45px;
+  }
+}
+
+.download__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.download__title {
+  text-align: center;
+  color: #000;
+  margin-bottom: 22px;
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 35px;
+}
+
+@media only screen and (width <= 1024px) {
+  .download__title {
+    margin-bottom: 21px;
+    font-family: Raleway;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .download__title {
+    margin-bottom: 32px;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+}
+
+.download__text {
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+@media only screen and (width <= 1024px) {
+  .download__text {
+    margin-bottom: 43px;
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .download__text {
+    margin-bottom: 11px;
+    font-family: Raleway;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15px;
+  }
+}
+
+@media only screen and (width <= 1024px) {
+  .download__btn {
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21px;
+  }
+}
+
+.footer {
+  background-color: #353c65;
+  padding-top: 71px;
+}
+
+@media only screen and (width <= 1024px) {
+  .footer {
+    padding-top: 46px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .footer {
+    padding-top: 34px;
+  }
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer__wrapper {
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+}
+
+@media only screen and (width <= 767px) {
+  .footer__wrapper {
+    grid-template-columns: 1fr;
+    row-gap: 59px;
+  }
+}
+
+.footer__title {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 29px;
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+@media only screen and (width <= 1024px) {
+  .footer__title {
+    margin-bottom: 18px;
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .footer__title {
+    margin-bottom: 34px;
+  }
+}
+
+.footer__text {
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 67px;
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+@media only screen and (width <= 1024px) {
+  .footer__text {
+    margin-bottom: 43px;
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .footer__text {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 33px;
+  }
+}
+
+.footer__copyright-wrapper {
+  background-color: #2c3154;
+  padding: 24px 15px;
+}
+
+@media only screen and (width <= 1024px) {
+  .footer__copyright-wrapper {
+    padding: 14px 15px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .footer__copyright-wrapper {
+    padding: 29px 20px;
+  }
+}
+
+.footer__copyright {
+  text-align: center;
+  color: gray;
+  text-transform: capitalize;
+  width: 100%;
+  max-width: 370px;
+  margin: 0 auto;
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+@media only screen and (width <= 1024px) {
+  .footer__copyright {
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+
+.footer__copyright span {
+  color: #fff;
+}
+
+.title__social-media {
+  margin-bottom: 49px;
+}
+
+@media only screen and (width <= 1024px) {
+  .title__social-media {
+    margin-bottom: 32px;
+  }
+}
+
+@media only screen and (width <= 767px) {
+  .title__social-media {
+    margin-bottom: 36.71px;
+  }
+}
+
+.social-media {
+  justify-content: center;
+  column-gap: 26px;
+  display: flex;
+}
+
 /*# sourceMappingURL=index.b2d9cf43.css.map */
