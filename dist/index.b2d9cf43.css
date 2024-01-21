@@ -377,11 +377,22 @@ body {
   }
 }
 
+.features {
+  margin-bottom: 133px;
+  scroll-margin-top: 100px;
+}
+
+@media only screen and (width <= 1024px) {
+  .features {
+    margin-bottom: 80px;
+  }
+}
+
 .features__container {
   grid-template-columns: repeat(3, 1fr);
   gap: 88px 30px;
   max-width: 1200px;
-  margin: 0 auto 133px;
+  margin: 0 auto;
   padding: 0 15px;
   display: grid;
 }
@@ -389,7 +400,6 @@ body {
 @media only screen and (width <= 1024px) {
   .features__container {
     gap: 50px 20px;
-    margin-bottom: 80px;
   }
 }
 
@@ -485,6 +495,7 @@ body {
 
 .works {
   margin-bottom: 114px;
+  scroll-margin-top: 90px;
 }
 
 @media only screen and (width <= 1024px) {
@@ -595,6 +606,7 @@ body {
 
 .our-team {
   margin-bottom: 114px;
+  scroll-margin-top: 100px;
 }
 
 @media only screen and (width <= 1024px) {
@@ -728,7 +740,7 @@ body {
   align-items: center;
   width: 39px;
   height: 39px;
-  transition: fill .3s linear;
+  transition: all .3s linear;
   display: flex;
 }
 
@@ -738,6 +750,14 @@ body {
 
 .facebook__link:active, .twitter__link:active, .linkedin__link:active {
   border: 1px solid #b90c0ccc;
+}
+
+.facebook__link:hover svg path, .twitter__link:hover svg path, .linkedin__link:hover svg path {
+  fill: #e71414;
+}
+
+.facebook__link:active svg path, .twitter__link:active svg path, .linkedin__link:active svg path {
+  fill: #b90c0ccc;
 }
 
 @media only screen and (width <= 1024px) {
@@ -754,20 +774,9 @@ body {
   }
 }
 
-.facebook, .linkedin, .twitter {
-  transition: fill .3s linear;
-}
-
-.facebook:hover path, .linkedin:hover path, .twitter:hover path {
-  fill: #e71414;
-}
-
-.facebook:active path, .linkedin:active path, .twitter:active path {
-  fill: #b90c0ccc;
-}
-
 .testimonials {
   margin-bottom: 114px;
+  scroll-margin-top: 100px;
 }
 
 @media only screen and (width <= 1024px) {
