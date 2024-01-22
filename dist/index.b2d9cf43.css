@@ -759,6 +759,7 @@ body {
 
 .facebook__link:active svg path, .twitter__link:active svg path, .linkedin__link:active svg path {
   fill: #b90c0ccc;
+  transition: fill .3s linear;
 }
 
 @media only screen and (width <= 1024px) {
@@ -805,11 +806,18 @@ body {
   }
 }
 
+.testimonials__wrapper-image {
+  position: relative;
+}
+
 .testimonials__image {
   object-fit: cover;
   object-position: center;
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .testimonials__info {
@@ -991,20 +999,25 @@ body {
 }
 
 .footer__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.footer__wrapper {
   grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto 67px;
+  padding: 0 15px;
   display: grid;
 }
 
+@media only screen and (width <= 1024px) {
+  .footer__container {
+    margin-bottom: 43px;
+  }
+}
+
 @media only screen and (width <= 767px) {
-  .footer__wrapper {
+  .footer__container {
     grid-template-columns: 1fr;
     row-gap: 59px;
+    margin-bottom: 33px;
   }
 }
 
@@ -1039,7 +1052,6 @@ body {
   color: #fff;
   text-align: center;
   text-transform: capitalize;
-  margin-bottom: 67px;
   font-family: Raleway;
   font-size: 18px;
   font-weight: 400;
@@ -1048,7 +1060,6 @@ body {
 
 @media only screen and (width <= 1024px) {
   .footer__text {
-    margin-bottom: 43px;
     font-family: Raleway;
     font-size: 14px;
     font-weight: 400;
@@ -1059,8 +1070,7 @@ body {
 @media only screen and (width <= 767px) {
   .footer__text {
     width: 100%;
-    max-width: 280px;
-    margin: 0 auto 33px;
+    margin: 0 auto;
   }
 }
 
