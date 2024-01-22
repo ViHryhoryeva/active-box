@@ -230,6 +230,7 @@ body {
 }
 
 .header.scrolled {
+  z-index: 3;
   background-color: #2f3047;
 }
 

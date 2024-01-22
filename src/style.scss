@@ -175,6 +175,7 @@ body {
     }
     &.scrolled {
         background-color: #2f3047;
+        z-index: 3;
     }
     &__burger-item {
         position: absolute;
