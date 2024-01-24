@@ -52,15 +52,11 @@ body {
 }
 
 .banner__container {
+  z-index: 0;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-}
-
-@media only screen and (width <= 767px) {
-  .banner__container.hide {
-    opacity: 0;
-  }
+  position: relative;
 }
 
 .banner:before {
@@ -244,8 +240,20 @@ body {
 }
 
 .nav__list {
-  align-items: center;
   display: flex;
+}
+
+@media only screen and (width <= 767px) {
+  .nav__list {
+    display: block;
+    position: relative;
+  }
+
+  .nav__list .nav__link {
+    text-align: left;
+    padding: 24px 0;
+    display: block;
+  }
 }
 
 .nav__link {
@@ -293,26 +301,39 @@ body {
 
 @media only screen and (width <= 767px) {
   .nav {
-    display: none;
-  }
-
-  .nav.open {
+    z-index: 1;
+    z-index: 1;
+    background-image: url("img.3440fa77.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100vh;
     padding: 84px 20px 20px;
+    transition: left .3s linear;
     display: block;
     position: fixed;
+    top: 0;
+    left: 100%;
+  }
+
+  .nav:before {
+    content: "";
+    opacity: .8;
+    background-color: #252b49;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
     top: 0;
     left: 0;
   }
 
-  .nav.open .nav__list {
-    display: block;
+  .nav.open {
+    left: 0%;
   }
 
-  .nav.open .nav__list .nav__link {
-    text-align: left;
-    padding: 24px 0;
+  .nav.open .nav__list {
     display: block;
   }
 }
@@ -359,9 +380,10 @@ body {
 }
 
 .link__logo {
-  z-index: 1;
+  z-index: 2;
   align-items: center;
   display: flex;
+  position: relative;
 }
 
 @media only screen and (width <= 1024px) {
@@ -757,8 +779,12 @@ body {
   fill: #e71414;
 }
 
-.facebook__link:active svg path, .twitter__link:active svg path, .linkedin__link:active svg path {
+.facebook__link:active svg, .twitter__link:active svg, .linkedin__link:active svg {
   fill: #b90c0ccc;
+  transition: fill .3s linear;
+}
+
+.facebook__link path, .twitter__link path, .linkedin__link path {
   transition: fill .3s linear;
 }
 
@@ -911,6 +937,10 @@ body {
   border-radius: 50%;
   width: 14px;
   height: 14px;
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: #5c3249;
 }
 
 .swiper-pagination-bullet-active {

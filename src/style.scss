@@ -15,31 +15,23 @@ body {
     position: relative;
 
     @media only screen and (max-width: 1024px) {
-        & {
-            padding-bottom: 126px;
-            margin-bottom: 78px;
-        } 
+        padding-bottom: 126px;
+        margin-bottom: 78px;
     }
     @media only screen and (max-width: 767px) {
-        & {
-            padding: 106px 0 52px;
-            margin-bottom: 40px;
-        }
+        padding: 106px 0 52px;
+        margin-bottom: 40px;
     }
 
     &__container {
         @include container();
-
-        @media only screen and (max-width: 767px) {
-            &.hide {
-                opacity: 0;
-            }
-        }
+        position: relative;
+        z-index: 0;
     }
     &::before {
         content: '';
         display: block;
-        background-color: #252B49;
+        background-color: $background_burger;
         opacity: .8;
         position: absolute;
         width: 100%;
@@ -57,16 +49,12 @@ body {
 
         @include font(64px, 75px,'Raleway', 900);
         @media only screen and (max-width: 1024px) {
-            & {
-                @include font(48px, 56px,'Raleway', 900);
-                margin-bottom: 62px;
-            }
+            @include font(48px, 56px,'Raleway', 900);
+            margin-bottom: 62px;
         }
         @media only screen and (max-width: 767px) {
-            & {
-                @include font(36px, 42px,'Raleway', 900);
-                margin-bottom: 33px;
-            }
+            @include font(36px, 42px,'Raleway', 900);
+            margin-bottom: 33px;
         }
     }
     &__text {
@@ -81,16 +69,13 @@ body {
         @include font(24px, 28px,'Raleway', 400);
 
         @media only screen and (max-width: 1024px) {
-            & {
-                @include font(18px, 21px,'Raleway', 400);
-                margin-bottom: 89px;
-            }
+            @include font(18px, 21px,'Raleway', 400);
+            margin-bottom: 89px;
+
         }
         @media only screen and (max-width: 767px) {
-            & {
-                @include font(14px, 16px,'Raleway', 400);
-                margin-bottom: 50px;
-            }
+            @include font(14px, 16px,'Raleway', 400);
+            margin-bottom: 50px;
         }
     } 
 }
@@ -100,21 +85,15 @@ body {
     left: 0;
     z-index: 1;
     width: 100%;
-
     @media only screen and (max-width: 1024px) {
-        & {
-            margin-bottom: 157px;
-            }
+        margin-bottom: 157px;
         }
     @media only screen and (max-width: 767px) {
-        & {
-            padding: 22px 0;
-            align-items: center;
-            border-bottom: none;
-            margin-bottom: 0;
-        }
+        padding: 22px 0;
+        align-items: center;
+        border-bottom: none;
+        margin-bottom: 0;
     }
-
     &__container {
         @include container();
         border-bottom: 1px solid $color_border;
@@ -123,10 +102,7 @@ body {
         align-items: center;
 
         @media only screen and (max-width: 767px) {
-            & {
-                border-bottom: none;
-            }
-
+            border-bottom: none;
         }
     }
     &__burger {
@@ -136,30 +112,28 @@ body {
         height: 18px;
         position: relative;
         @media only screen and (max-width: 767px) {
-            & {
+            display: block;
+            &::before {
+                content: '';
                 display: block;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-bottom: 3px solid $color;
+                transition: all .3s linear;
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                border-bottom: 3px solid $color;
+                transition: all .3s linear;
+            }
         }
-        &::before {
-            content: '';
-            display: block;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-bottom: 3px solid $color;
-            transition: all .3s linear;
-        }
-        &::after {
-            content: '';
-            display: block;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            border-bottom: 3px solid $color;
-            transition: all .3s linear;
-        }
-    }
         &.open {
             .header__burger-item {
                 opacity: 0;
@@ -187,12 +161,20 @@ body {
     }
 }
 .nav {
-
+    
     &__list {
         display: flex;
-        align-items: center;
+        @media only screen and (max-width: 767px) {
+            display: block;
+            position: relative;
+            .nav__link {
+                text-align: left;
+                padding: 24px 0;
+                display: block;
+            }
+        }
+        
     }
-    
     &__link {
         color: $color;
         text-align: center;
@@ -206,18 +188,14 @@ body {
         transition: all .3s linear;
 
         @media only screen and (max-width: 1024px) {
-            & {
-                padding-left: 30px;
-                padding-right: 30px;
-                @include font(12px, 14px,'Raleway', 700);
-            }
+            padding-left: 30px;
+            padding-right: 30px;
+            @include font(12px, 14px,'Raleway', 700);
         }
         @media only screen and (max-width: 992px) {
-            & {
-                padding-left: 15px;
-                padding-right: 15px;
-                min-width: 124px;
-            }
+            padding-left: 15px;
+            padding-right: 15px;
+            min-width: 124px;
         }
         &:hover {
             border-bottom: 3px solid $color_border;
@@ -228,26 +206,37 @@ body {
         }
     }
     @media only screen and (max-width: 767px) {
-        & {
-            display: none;
-        }
-        &.open {
-            display: block;
-            position: fixed;
-            left: 0;
-            top: 0;
+        &::before {
+            content: '';
+            opacity: .8;
+            background-color: #252B49;
             width: 100%;
-            height: 100vh;
-            padding: 84px 20px 20px;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        display: block;
+        position: fixed;
+        left: 100%;
+        transition: left .3s linear;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 84px 20px 20px;
+        z-index: 1;
+        background-image: url(images/img.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+
+        &.open {
+            left: 0%;
 
             .nav__list {
                 display: block;
-                
-                .nav__link {
-                    display: block;
-                    text-align: left;
-                    padding: 24px 0;
-                }
             }
         }
     }
@@ -269,15 +258,11 @@ body {
 
     @include font(24px, 28px,'Raleway', 900);
     @media only screen and (max-width: 1024px) {
-        & {
-            padding: 26px 55px;
-        }
+        padding: 26px 55px;
     }
     @media only screen and (max-width: 767px) {
-        & {
-            padding: 16px 38px;
-            width: 100%;
-        }
+        padding: 16px 38px;
+        width: 100%;
     }
 
     &:hover {
@@ -290,25 +275,22 @@ body {
 }
 
 .link__logo {
+    z-index: 2;
+    position: relative;
     display: flex;
     align-items: center;
-    z-index: 1;
 
     @media only screen and (max-width: 1024px) {
-        & {
-            svg {
-                width: 112px;
-                height: 28px;
-            }
+        svg {
+            width: 112px;
+            height: 28px;
         }
     }
     @media only screen and (max-width: 767px) {
-        &  {
-            svg {
-                width: 103px;
-                height: 14px;
-            }
-        }  
+        svg {
+            width: 103px;
+            height: 14px;
+        }
     }
 }
 // features
@@ -559,11 +541,15 @@ body {
     }
     &:active {
         svg {
-            path {
                 fill: $background_img_active;
+                fill: $background_img_active;
+                transition: fill .3s linear;
+            fill: $background_img_active; 
                 transition: fill .3s linear;
         } 
     } 
+    path {
+        transition: fill .3s linear;
     }
     @media only screen and (max-width: 1024px) {
         width: 32px;
@@ -658,13 +644,17 @@ body {
     &-bullet {
         width: 14px;
         height: 14px;
-        border: 1px solid #7E5D6F;
+        border: 1px solid $background_swiper;
         border-radius: 50%;
         background-color: transparent;
         opacity: 1;
-        &-active {
-            background-color: #7E5D6F;
+        &:hover {
+            background-color: $background_testimonials;
         }
+        &-active {
+            background-color: $background_swiper;
+        }
+
     }
 }
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {

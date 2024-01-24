@@ -20,7 +20,6 @@ window.addEventListener('scroll', handleScroll);
 // Получаем ссылки на элементы
 let menuButton = document.querySelector('.header__burger');
 let menu = document.querySelector('.nav');
-let bannerContainer = document.querySelector('.banner__container');
 
 // Добавляем слушатели событий
 menuButton.addEventListener('click', toggleMenu);
@@ -29,7 +28,6 @@ menuButton.addEventListener('click', toggleMenu);
 function toggleMenu() {
     menu.classList.toggle('open');
     menuButton.classList.toggle('open');
-    bannerContainer.classList.toggle('hide');
 }
 
 // Добавляем слушатель события для каждого пункта меню
