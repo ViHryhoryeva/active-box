@@ -43,3 +43,10 @@ function closeMenu() {
     menu.classList.remove('open');
 }
 
+// swiper js
+var swiper = new Swiper(".testimonialsSwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });

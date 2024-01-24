@@ -31,5 +31,12 @@ menuItems.forEach(function(item) {
 function closeMenu() {
     menu.classList.remove("open");
 }
+// swiper js
+var swiper = new Swiper(".testimonialsSwiper", {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    }
+});
 
 //# sourceMappingURL=index.d4a8b14f.js.map
