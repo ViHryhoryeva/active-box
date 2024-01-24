@@ -230,6 +230,10 @@ body {
   background-color: #2f3047;
 }
 
+.header.scrolled .header__container {
+  border-bottom: none;
+}
+
 .header__burger-item {
   border-bottom: 3px solid #fff;
   width: 100%;
