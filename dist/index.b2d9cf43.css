@@ -941,6 +941,7 @@ body {
   border-radius: 50%;
   width: 14px;
   height: 14px;
+  transition: background-color .3s linear;
 }
 
 .swiper-pagination-bullet:hover {

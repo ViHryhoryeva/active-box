@@ -237,7 +237,6 @@ body {
 
         &.open {
             left: 0%;
-
             .nav__list {
                 display: block;
             }
@@ -347,7 +346,6 @@ body {
                 height: 75px;
             }
         }
-        
     }
     &__title {
         color: $color_title;
@@ -539,16 +537,12 @@ body {
             path {
                 fill: $color_nav;
             }
-            
         }
     }
     &:active {
         svg {
-                fill: $background_img_active;
-                fill: $background_img_active;
-                transition: fill .3s linear;
             fill: $background_img_active; 
-                transition: fill .3s linear;
+            transition: fill .3s linear;
         } 
     } 
     path {
@@ -651,6 +645,7 @@ body {
         border-radius: 50%;
         background-color: transparent;
         opacity: 1;
+        transition: background-color .3s linear;
         &:hover {
             background-color: $background_testimonials;
         }
